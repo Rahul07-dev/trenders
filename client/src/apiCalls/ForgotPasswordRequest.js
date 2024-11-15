@@ -1,7 +1,7 @@
 
 export const ForgotPasswordRequest = async(email,password,sendedOtp,otp)=>{
     try{
-        const res = await fetch('/api/forgotPassword',{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/forgotPassword`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json',

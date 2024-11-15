@@ -1,6 +1,6 @@
 export const CheckForPincode = async(productId,pin)=>{
     try{
-        const res = await fetch('/api/checkForPincode',{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/checkForPincode`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json',

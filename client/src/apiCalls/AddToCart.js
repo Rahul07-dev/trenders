@@ -1,6 +1,6 @@
 export const AddToCart = async(email,productId,add,qty,type)=>{
     try{
-        const res = await fetch('/api/addToCart',{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/addToCart`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json',

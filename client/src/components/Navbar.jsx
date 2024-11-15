@@ -1,6 +1,6 @@
 import React,{useState,useRef,useEffect} from 'react'
 import {Link,useNavigate}  from 'react-router-dom'
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 
 
 // imporing images and others 
@@ -22,6 +22,7 @@ import { Overlay,Tooltip } from 'react-bootstrap'
 import Loading from '../components/Loading'
 
 import { Logout } from '../apiCalls/Logout'
+import { userDetailsAction } from '../actions/userDetails'
 
 
 const Navbar = () => {
@@ -31,13 +32,15 @@ const Navbar = () => {
     const [show, setShow] = useState(false);
     const target = useRef(null);
     const [userExist, setUserExist] = useState(false);
-
+const dispatch = useDispatch();
 
     // for logout
     const [logoutBox, setLogoutBox] = useState('none')
-    const logoutUser = ()=>{
-        Logout();
-    }
+    const logoutUser = async ()=>{
+            document.cookie ="userToken=; Max-Age=0; path=/; domain=";
+            dispatch({ type: "resetUserDetails" });
+            dispatch({ type: "resetProductDetails" });
+              await Logout();}
 
     // getting userdata 
     const{loading,status,userInfo,isAdmin}= useSelector((state)=>state.userDetailsReducer);

@@ -6,14 +6,17 @@ export const userDetailsAction = ()=>{
                 type:'userDetailsRequest'
             })
 
-            const res = await fetch('/api/userDetails',{
-                method:"GET",
-                headers:{
-                    Accept:"application/json",
-                    "content-Type":"application/json"
+            const res = await fetch(
+              `${process.env.REACT_APP_BACKEND_URL}/api/userDetails`,
+              {
+                method: "GET",
+                headers: {
+                  Accept: "application/json",
+                  "content-Type": "application/json",
                 },
-                Credential:'include'
-            });
+                credentials: "include",
+              }
+            );
             const {data} = await res.json();
             if(res.status==200){
                 dispatch({

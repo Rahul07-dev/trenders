@@ -1,6 +1,6 @@
 export const AddressInfoRequest = async(email,name,phone,address,locality,city,pin,state)=>{
     try{
-        const res = await fetch('/api/addressInfo',{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/addressInfo`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json',

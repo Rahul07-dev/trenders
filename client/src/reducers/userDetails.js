@@ -27,7 +27,12 @@ const userDetailsReducer = (state = initialUserDetails,action)=>{
             data:state,
             status:401
         };
-    }else{
+    }
+    else if(action.type=='resetUserDetails')
+    {
+        return initialUserDetails;
+    }
+    else{
         return state
     }
 }

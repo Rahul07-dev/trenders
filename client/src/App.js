@@ -1,5 +1,5 @@
 // importing librarirs 
-import react,{useEffect,useState} from 'react';
+import react,{useEffect,useState,useCallback} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import { BrowserRouter, Routes, Route } from "react-middleware-router";
 import {useDispatch,useSelector} from 'react-redux'
@@ -58,8 +58,6 @@ function App() {
 		window.scrollTo(0, 0)
 	}, [])
 	
-
-
 
 	return (
 		<div>

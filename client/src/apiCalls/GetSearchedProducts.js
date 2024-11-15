@@ -2,7 +2,7 @@
 
 export const GetSearchedProducts = async (search,filterData,type)=>{
     try{
-        const res = await fetch('/api/getSearchedProducts',{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/getSearchedProducts`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json',

@@ -5,11 +5,13 @@ import {MdEmail} from 'react-icons/md'
 import {RiLockPasswordFill} from 'react-icons/ri'
 import {AiFillEye} from 'react-icons/ai'
 import {AiFillEyeInvisible} from 'react-icons/ai'
+import GoogleAuth from './GoogleAuth.jsx'
 
 
 import {LoginRequest} from '../apiCalls/LoginRequest'
 
 import '../styles/account.css'
+
 const Login = () => {
 
     const navigate = useNavigate();
@@ -95,6 +97,7 @@ const Login = () => {
                 <div className="font1 me-2">New user ?</div>
                 <Link to='/signup' className='font1 textColor'>Sign Up</Link>
             </div>
+            <GoogleAuth/>
         </div>
     </div>
   )

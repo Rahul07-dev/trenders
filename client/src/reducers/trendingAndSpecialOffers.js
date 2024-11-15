@@ -13,12 +13,14 @@ const trendingAndSpecialOffersReducer = (state = initialProductDetails,action)=>
             inTrendings:action.payload.inTrendings,
             specialOffers:action.payload.specialOffers
         };
-    }else if(action.type=='inTrendingAndSpecialOffersFail'){
-        return {
-            loading:false,
-        };
-    }else{
-        return state
+    }else if (action.type ==="inTrendingAndSpecialOffersFail") {
+      return {
+        loading: false,
+      };
+    } else if (action.type ==="resetProductDetails") {
+      return initialProductDetails;
+    } else {
+      return state;
     }
 }
 

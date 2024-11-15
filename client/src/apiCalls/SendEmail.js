@@ -1,6 +1,6 @@
 export const SendEmail = async(email,type)=>{
     try{
-        const res = await fetch('/api/sendEmail',{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/sendEmail`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json',

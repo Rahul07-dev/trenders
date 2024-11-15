@@ -1,7 +1,7 @@
 
 export const OrdersRequest = async(details)=>{
     try{
-        const res = await fetch('/api/order',{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/order`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json',

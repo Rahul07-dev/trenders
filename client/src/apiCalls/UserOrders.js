@@ -1,6 +1,6 @@
 export const UserOrdersCall = async(email)=>{
     try{
-        const res = await fetch('/api/userOrders',{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/userOrders`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json',

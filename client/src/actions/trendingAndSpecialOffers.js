@@ -6,13 +6,13 @@ export const inTrendingAndSpecialOffersAction = ()=>{
                 type:'inTrendingAndSpecialOffersRequest'
             })
 
-            const res = await fetch('/api/inTrendingAndSpecialOffers',{
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/inTrendingAndSpecialOffers`,{
                 method:"GET",
                 headers:{
                     Accept:"application/json",
                     "content-Type":"application/json"
                 },
-                Credential:'include'
+                credentials:'include'
             });
             const {data} = await res.json();
             if(res.status==200){

@@ -1,7 +1,7 @@
 
 export const GetReviews = async(productName,productBrand)=>{
     try{
-        const res = await fetch('/api/getReviews',{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/getReviews`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json',

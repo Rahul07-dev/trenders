@@ -1,7 +1,7 @@
 
 export const SignupRequest = async(email,password,sendedOtp,otp)=>{
     try{
-        const res = await fetch('/api/signup',{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/signup`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json',

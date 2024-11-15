@@ -1,7 +1,7 @@
 
 export const GetAllOrdersForAdmin = async (filters)=>{
     try{
-        const res = await fetch('/api/allOrders',{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/allOrders`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json',
